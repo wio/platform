@@ -1,0 +1,58 @@
+syntax = "proto3";
+package proto;
+
+message ProjectInformation {
+    string name = 1;
+    string directory = 2;
+    string wioPath = 3;
+}
+
+message DependencyLinkTarget {
+    string from = 1;
+    string to = 2;
+    string visibility = 3;
+}
+
+message DependencyTarget {
+    string name = 1;
+    string path = 2;
+    repeated string flags = 3;
+    repeated string definitions = 4;
+    string flagsVisibility = 5;
+    string definitionsVisibility = 6;
+    bool headerOnly = 7;
+}
+
+message TargetInformation {
+    ProjectInformation projectInformation = 1;
+    string targetName = 2;
+    string targetPath = 3;
+    string platform = 4;
+    string framework = 5;
+    string hardware = 6;
+    repeated string flags = 7;
+    repeated string definitions = 8;
+
+    map<string, DependencyTarget> dependencies = 9;
+    repeated DependencyLinkTarget dependenciesLink =  10;
+}
+
+message Executable {
+    string commandName = 1;
+    repeated string commandArguments = 2;
+}
+
+message Executables {
+    repeated Executable executables = 1;
+}
+
+message RunInformation {
+    string targetName = 1;
+    string hardwarePort = 2;
+}
+
+service Platform {
+    rpc CreateExampleProject (ProjectInformation) returns (Executables);
+    rpc BuildProject (TargetInformation) returns (Executables);
+    rpc RunProject (RunInformation) returns (Executables);
+}
