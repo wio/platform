@@ -15,9 +15,9 @@ func TestEncode(t *testing.T) {
     encoded2 := encodeMessage("Hello\nThere")
 
     if encoded1 != desired1 {
-        t.Errorf("Encoding was incorrect, got %s, want %s", encoded1, desired2)
+        t.Errorf("Encoding was incorrect, got: %s, want: %s", encoded1, desired2)
     } else if encoded2!= desired2 {
-        t.Errorf("Encoding was incorrect, got %s, want %s", encoded1, desired2)
+        t.Errorf("Encoding was incorrect, got: %s, want: %s", encoded1, desired2)
     }
 }
 
@@ -32,9 +32,9 @@ func TestDecodeMessage(t *testing.T) {
     decoded2 := DecodeMessage(encoded2)
 
     if decoded1 != desired1 {
-        t.Errorf("Decoding was incorrect, got %s, want %s", decoded1, desired2)
+        t.Errorf("Decoding was incorrect, got: %s, want: %s", decoded1, desired2)
     } else if decoded2 != decoded2 {
-        t.Errorf("Decoding was incorrect, got %s, want %s", decoded2, desired2)
+        t.Errorf("Decoding was incorrect, got: %s, want: %s", decoded2, desired2)
     }
 }
 
@@ -55,7 +55,7 @@ func TestPrint(t *testing.T) {
     decodedMessage := DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -70,7 +70,7 @@ func TestPrint(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -83,7 +83,7 @@ func TestPrint(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 }
 

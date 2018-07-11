@@ -25,7 +25,7 @@ func TestInfo(t *testing.T) {
     decodedMessage := DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Info Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Info Output was incorrect, got:: %s, want:: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -40,7 +40,7 @@ func TestInfo(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Info Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Info Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -53,7 +53,7 @@ func TestInfo(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Info Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Info Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 }
 
@@ -74,7 +74,7 @@ func TestInfoln(t *testing.T) {
     decodedMessage := DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Info Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Info Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -89,7 +89,7 @@ func TestInfoln(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Info Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Info Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -102,7 +102,7 @@ func TestInfoln(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Info Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Info Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 }
 
@@ -123,7 +123,7 @@ func TestWarn(t *testing.T) {
     decodedMessage := DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Warn Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Warn Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -138,7 +138,7 @@ func TestWarn(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Warn Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Warn Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -151,7 +151,7 @@ func TestWarn(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Warn Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Warn Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 }
 
@@ -172,7 +172,7 @@ func TestWarnln(t *testing.T) {
     decodedMessage := DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Warn Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Warn Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -187,7 +187,7 @@ func TestWarnln(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Warn Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Warn Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -200,7 +200,7 @@ func TestWarnln(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Warn Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Warn Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 }
 
@@ -221,7 +221,7 @@ func TestFatal(t *testing.T) {
     decodedMessage := DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Fatal Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Fatal Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -236,7 +236,7 @@ func TestFatal(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Fatal Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Fatal Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -249,7 +249,7 @@ func TestFatal(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Fatal Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Fatal Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -262,7 +262,7 @@ func TestFatal(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Fatal Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Fatal Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 }
 
@@ -283,7 +283,7 @@ func TestFatalln(t *testing.T) {
     decodedMessage := DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Fatal Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Fatal Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -298,7 +298,7 @@ func TestFatalln(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Fatal Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Fatal Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -311,7 +311,7 @@ func TestFatalln(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Fatal Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Fatal Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 
     buf.Reset()
@@ -324,6 +324,6 @@ func TestFatalln(t *testing.T) {
     decodedMessage = DecodeMessage(buf.String())
 
     if decodedMessage != desiredOutput {
-        t.Errorf("Fatal Output was incorrect, got %s, want %s", decodedMessage, desiredOutput)
+        t.Errorf("Fatal Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 }

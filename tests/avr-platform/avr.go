@@ -25,7 +25,9 @@ func (p *AvrPlatform) BuildProject(information *shared.TargetInformation) ([]sha
 
 func (p *AvrPlatform) RunProject(information *shared.RunInformation) ([]shared.ExecutableInformation, error) {
     output.Info("Running the project")
-    return nil, nil
+    return []shared.ExecutableInformation{{
+        CommandName: "Deep",
+    }}, nil
 }
 
 func main() {

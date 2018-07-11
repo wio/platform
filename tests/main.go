@@ -114,15 +114,17 @@ func main() {
     // build function
     executables, err := platform.BuildProject(obj)
 
-    fmt.Printf("Number of executables given %d", len(executables))
+    fmt.Printf("wio message:: {{Number of executables given %d\n}}", len(executables))
     if err != nil {
        fmt.Fprintln(old, plugin_utils.GetPluginError(err))
+       os.Exit(2)
     }
 
     // run function
     _, err = platform.RunProject(&shared.RunInformation{})
     if err != nil {
         fmt.Fprintln(old, plugin_utils.GetPluginError(err))
+        os.Exit(2)
     }
 
     // print the output because we need to structure the logs

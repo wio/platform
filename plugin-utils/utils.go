@@ -2,11 +2,12 @@ package plugin_utils
 
 import (
     "strings"
+    "regexp"
     "plugins/output"
 )
 
 const (
-    pluginError = "rpc error: code = Unknown desc = "
+    pluginErrorRep = `rpc error: code = \w*\s* desc = `
 )
 
 func IsPluginMessage(string string) bool {
@@ -14,6 +15,11 @@ func IsPluginMessage(string string) bool {
 }
 
 func GetPluginError(err error) string {
-    return strings.Replace(strings.Trim(strings.Trim(strings.Trim(err.Error(), " "), "\n"), "\r"),
-        pluginError, "", -1)
+    if err == nil {
+        return ""
+    }
+
+    pat := regexp.MustCompile(pluginErrorRep)
+
+    return pat.ReplaceAllString(strings.Trim(strings.Trim(err.Error(), "\n"), "\r"), "")
 }
