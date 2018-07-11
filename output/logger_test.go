@@ -327,3 +327,101 @@ func TestFatalln(t *testing.T) {
         t.Errorf("Fatal Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
     }
 }
+
+func TestVerb(t *testing.T) {
+    var buf bytes.Buffer
+    log.SetOutput(&buf)
+    defer func() {
+        log.SetOutput(os.Stderr)
+    }()
+
+    /////// Print Test ///////////
+    desiredOutput := "VERB Hello VERB There VERB My Man"
+
+    Verb("Hello ")
+    Verb("There ")
+    Verb("My Man")
+
+    decodedMessage := DecodeMessage(buf.String())
+
+    if decodedMessage != desiredOutput {
+        t.Errorf("Verb Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
+    }
+
+    buf.Reset()
+
+    /////// Println Test ///////////
+    desiredOutput = "VERB Hello\nVERB There\nVERB My Man\n"
+
+    Verb("Hello\n")
+    Verb("There\n")
+    Verb("My Man\n")
+
+    decodedMessage = DecodeMessage(buf.String())
+
+    if decodedMessage != desiredOutput {
+        t.Errorf("Verb Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
+    }
+
+    buf.Reset()
+
+    /////// Printf Test ///////////
+    desiredOutput = "VERB Hello\nThere\nMy Man\n"
+
+    Verb("Hello\n%s\n%s\n", "There", "My Man")
+
+    decodedMessage = DecodeMessage(buf.String())
+
+    if decodedMessage != desiredOutput {
+        t.Errorf("Verb Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
+    }
+}
+
+func TestVerbln(t *testing.T) {
+    var buf bytes.Buffer
+    log.SetOutput(&buf)
+    defer func() {
+        log.SetOutput(os.Stderr)
+    }()
+
+    /////// Print Test ///////////
+    desiredOutput := "VERB Hello \nVERB There \nVERB My Man\n"
+
+    Verbln("Hello ")
+    Verbln("There ")
+    Verbln("My Man")
+
+    decodedMessage := DecodeMessage(buf.String())
+
+    if decodedMessage != desiredOutput {
+        t.Errorf("Verb Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
+    }
+
+    buf.Reset()
+
+    /////// Println Test ///////////
+    desiredOutput = "VERB Hello\n\nVERB There\n\nVERB My Man\n\n"
+
+    Verbln("Hello\n")
+    Verbln("There\n")
+    Verbln("My Man\n")
+
+    decodedMessage = DecodeMessage(buf.String())
+
+    if decodedMessage != desiredOutput {
+        t.Errorf("Verb Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
+    }
+
+    buf.Reset()
+
+    /////// Printf Test ///////////
+    desiredOutput = "VERB Hello\nThere\nMy Man\n\n"
+
+    Verbln("Hello\n%s\n%s\n", "There", "My Man")
+
+    decodedMessage = DecodeMessage(buf.String())
+
+    if decodedMessage != desiredOutput {
+        t.Errorf("Verb Output was incorrect, got: %s, want: %s", decodedMessage, desiredOutput)
+    }
+}

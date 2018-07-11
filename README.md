@@ -44,6 +44,7 @@ import "github.com/wio/platform-plugin/output"
 output.Info("Hi")
 output.Warn("Warning")
 output.Fatal("Error")
+ouput.Verb("Verbose")
 
 // Regular ouput
 output.Print("No new line")

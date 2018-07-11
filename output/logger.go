@@ -11,9 +11,10 @@ const (
     INFO      Type = 0
     WARN      Type = 1
     ERR       Type = 2
+    VERB      Type = 3
 )
 
-var logTypeTags = [3]string{"INFO", "WARN", "ERR"}
+var logTypeTags = [4]string{"INFO", "WARN", "ERR", "VERB"}
 
 // Generic Write function
 func write(args ...interface{}) {
@@ -77,4 +78,12 @@ func Fatal(args ...interface{}) {
 
 func Fatalln(args ...interface{}) {
     write(append(args, ERR, true)...)
+}
+
+func Verb(args ...interface{}) {
+    write(append(args, VERB, false)...)
+}
+
+func Verbln(args ...interface{}) {
+    write(append(args, VERB, true)...)
 }
