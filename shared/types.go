@@ -12,6 +12,8 @@ type ProjectInformation struct {
     Directory string
     WioPath string
     ProjectType string
+    HeaderOnly bool
+    Framework string
 }
 
 // Dependency of a project and it's information

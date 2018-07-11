@@ -6,6 +6,8 @@ message ProjectInformation {
     string directory = 2;
     string wioPath = 3;
     string projectType = 4;
+    bool headerOnly = 5;
+    string framework = 6;
 }
 
 message DependencyLinkTarget {

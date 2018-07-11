@@ -57,6 +57,8 @@ func (m *GRPCClient) CreateExampleProject(projectInformation *ProjectInformation
         Directory: projectInformation.Directory,
         WioPath: projectInformation.WioPath,
         ProjectType: projectInformation.ProjectType,
+        HeaderOnly: projectInformation.HeaderOnly,
+        Framework: projectInformation.Framework,
     })
 
     return protoExecutablesToExecutableInformation(executables), err
@@ -95,6 +97,8 @@ func (m *GRPCClient) BuildProject(targetInformation *TargetInformation) ([]Execu
             Directory: targetInformation.ProjectInformation.Directory,
             WioPath: targetInformation.ProjectInformation.WioPath,
             ProjectType: targetInformation.ProjectInformation.ProjectType,
+            HeaderOnly: targetInformation.ProjectInformation.HeaderOnly,
+            Framework: targetInformation.ProjectInformation.Framework,
         },
         TargetName: targetInformation.TargetName,
         TargetPath: targetInformation.TargetPath,
@@ -141,6 +145,8 @@ func (m *GRPCServer) CreateExampleProject(ctx context.Context, args *proto.Proje
         Directory: args.Directory,
         WioPath: args.WioPath,
         ProjectType: args.ProjectType,
+        HeaderOnly: args.HeaderOnly,
+        Framework: args.Framework,
     }
 
     executableInformation, err := m.Impl.CreateExampleProject(projectInformation)
@@ -180,6 +186,8 @@ func (m *GRPCServer) BuildProject(ctx context.Context, args *proto.TargetInforma
             Directory: args.ProjectInformation.Directory,
             WioPath: args.ProjectInformation.WioPath,
             ProjectType: args.ProjectInformation.ProjectType,
+            HeaderOnly: args.ProjectInformation.HeaderOnly,
+            Framework: args.ProjectInformation.Framework,
         },
         TargetName: args.TargetName,
         TargetPath: args.TargetPath,
