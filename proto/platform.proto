@@ -5,6 +5,7 @@ message ProjectInformation {
     string name = 1;
     string directory = 2;
     string wioPath = 3;
+    string projectType = 4;
 }
 
 message DependencyLinkTarget {
