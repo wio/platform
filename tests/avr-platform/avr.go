@@ -2,51 +2,40 @@ package main
 
 import (
     "github.com/hashicorp/go-plugin"
-    "fmt"
-    "os"
-    "github.com/hashicorp/go-hclog"
-    "github.com/go-errors/errors"
     "plugins/shared"
+    "plugins/output"
 )
-
-var logger hclog.Logger
-
 
 type AvrPlatform struct {
 }
 
 func (p *AvrPlatform) CreateExampleProject(information *shared.ProjectInformation) ([]shared.ExecutableInformation, error) {
-    fmt.Fprintln(os.Stdout, "Populated Example Project")
+   output.Info("Populated Example Project")
     return nil, nil
 }
 
 func (p *AvrPlatform) BuildProject(information *shared.TargetInformation) ([]shared.ExecutableInformation, error) {
-    logger.Info(information.Platform)
-    information.Platform = "Nola"
-    logger.Info("Finished!!!!!")
+    output.Info("Building the project")
+    output.Info("Platform Name: " + information.Platform)
 
     return []shared.ExecutableInformation{{
         CommandName: "Deep",
-    }}, errors.New("This is stupid")
+    }}, nil
 }
 
 func (p *AvrPlatform) RunProject(information *shared.RunInformation) ([]shared.ExecutableInformation, error) {
-    fmt.Fprintln(os.Stdout, "Running project")
+    output.Info("Running the project")
     return nil, nil
 }
 
-
 func main() {
-    logger = hclog.New(&hclog.LoggerOptions{
-        Output: hclog.DefaultOutput,
-        Level:  hclog.Trace,
-        Name:   "avr",
-    })
+    output.Info("Plugin Started")
 
+    // Create a plugin to communicate
     plugin.Serve(&plugin.ServeConfig{
         HandshakeConfig: shared.Handshake,
         Plugins: map[string]plugin.Plugin{
-            "avr-platform": &shared.PlatformPlugin{Impl: &AvrPlatform{}},
+            "platform-atmelavr": &shared.PlatformPlugin{Impl: &AvrPlatform{}},
         },
 
         // A non-nil value here enables gRPC serving for this plugin...

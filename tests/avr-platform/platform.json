@@ -1,0 +1,4 @@
+{
+  "name": "platform-atmelavr",
+  "exec": "avr"
+}
