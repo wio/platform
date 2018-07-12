@@ -3,7 +3,7 @@ package shared
 import (
     "github.com/hashicorp/go-plugin"
     "google.golang.org/grpc"
-    "plugins/proto"
+    "platform-plugin/proto"
     "context"
 )
 

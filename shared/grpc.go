@@ -2,7 +2,7 @@ package shared
 
 import (
     "github.com/hashicorp/go-plugin"
-    "plugins/proto"
+    "platform-plugin/proto"
     "context"
     "errors"
 )

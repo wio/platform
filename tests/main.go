@@ -6,15 +6,15 @@ import (
     "os/exec"
 
     "github.com/hashicorp/go-plugin"
-    "plugins/shared"
+    "platform-plugin/shared"
     "bytes"
     "io"
     "strings"
-    "plugins/plugin-utils"
+    "platform-plugin/plugin-utils"
     "io/ioutil"
     "path/filepath"
     "github.com/hashicorp/go-hclog"
-    "plugins/output"
+    "platform-plugin/output"
     "encoding/json"
 )
 

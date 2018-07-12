@@ -3,7 +3,7 @@ package plugin_utils
 import (
     "strings"
     "regexp"
-    "plugins/output"
+    "platform-plugin/output"
 )
 
 const (

@@ -2,8 +2,8 @@ package main
 
 import (
     "github.com/hashicorp/go-plugin"
-    "plugins/shared"
-    "plugins/output"
+    "platform-plugin/shared"
+    "platform-plugin/output"
 )
 
 type AvrPlatform struct {
