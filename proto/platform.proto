@@ -5,9 +5,10 @@ message ProjectInformation {
     string name = 1;
     string directory = 2;
     string wioPath = 3;
-    string projectType = 4;
-    bool headerOnly = 5;
-    string framework = 6;
+    string platformPath = 4;
+    string projectType = 5;
+    bool headerOnly = 6;
+    string framework = 7;
 }
 
 message DependencyLinkTarget {

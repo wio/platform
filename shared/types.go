@@ -11,6 +11,7 @@ type ProjectInformation struct {
     Name string
     Directory string
     WioPath string
+    PlatformPath string
     ProjectType string
     HeaderOnly bool
     Framework string
